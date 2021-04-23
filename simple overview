@@ -1,0 +1,33 @@
+//run these commands 
+     $ npm i --save @fortawesome/fontawesome-svg-core
+     $ npm i --save @fortawesome/free-solid-svg-icons
+
+//for vue version 3 run
+    $ npm i --save @fortawesome/vue-fontawesome@prerelease
+
+//additional commands
+    $ npm i --save @fortawesome/free-brands-svg-icons
+    $ npm i --save @fortawesome/free-regular-svg-icons
+
+
+//go in main.js file in vue app and import the files and name the component. 
+
+   import { library } from '@fortawesome/fontawesome-svg-core'
+   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+   import { fas} from '@fortawesome/free-solid-svg-icons'
+   import { fab } from '@fortawesome/free-brands-svg-icons'
+
+   library.add( fas,fab )
+
+   createApp(App).use(store).use(router)
+   .component('fa', FontAwesomeIcon)
+   .mount('#app')
+
+
+// use the following syntax in your html template wherever you want, just be sure to keep 'fas' for font awesome solid and 'fab' for font awesome brand , 
+  these icons will be suggested by vs code and you can check on fontawesome official website.
+   
+   <fa class="icons" :icon="['fab', 'youtube']" />
+   <fa class="icons" :icon="['fas', 'user']"/>
+
+
